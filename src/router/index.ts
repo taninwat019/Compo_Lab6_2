@@ -52,7 +52,7 @@ const router = createRouter({
         return EventService.getEventById(id)
         .then((response) => {
           eventStore.setEvent(response.data)
-        }).catch(() => {
+        }).catch((error) => {
           if (error.response && error.response.status === 404) {
            return {
             name: '404-resource',
